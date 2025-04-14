@@ -1,5 +1,3 @@
-package server;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -15,7 +13,7 @@ public class MultiServer {
 	/**
 	 * Inizializza la porta.
 	 * 
-	 * @param port numero di porta su cui il server è in ascolto
+	 * @param port numero di porta su cui il server ï¿½ in ascolto
 	 */
 	public MultiServer(final int port) {
 		this.port = port;
@@ -44,7 +42,7 @@ public class MultiServer {
 	}
 
 	public static void main(final String[] args) {
-		int port = Integer.parseInt(args[0]);
+		int port = 8080;
 		if (port < 1024 || port > 65535) {
 			System.err.println("porta non valida");
 			return;

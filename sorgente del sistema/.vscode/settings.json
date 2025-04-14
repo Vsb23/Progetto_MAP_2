@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "server/lib/mysql-connector-java-8.0.16.jar"
+    ],
+    "java.project.sourcePaths": [
+        "server/src/main/java/server",
+        "server/src/main/java",
+        "client/src"
+    ]
+}
