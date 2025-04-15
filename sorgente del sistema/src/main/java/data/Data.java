@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import database.DatabaseConnectionException;
+import exception.DatabaseConnectionException;
 import database.DbAccess;
-import database.EmptySetException;
+import exception.EmptySetException;
 import database.Example;
-import database.NoValueException;
+import exception.NoValueException;
 import database.QUERY_TYPE;
 import database.TableData;
 import database.TableSchema;
@@ -28,11 +28,11 @@ public class Data {
 	 * tabella del database.
 	 *
 	 * @param table nome della tabella.
-	 * @throws EmptySetException           se la tabella è vuota
+	 * @throws EmptySetException           se la tabella ï¿½ vuota
 	 * @throws SQLException                se la tabella non esiste
 	 * @throws NoValueException            eccezione lanciata quando l'operatore
 	 *                                     aggregato non da risultati
-	 * @throws DatabaseConnectionException la connesione al databese è fallita
+	 * @throws DatabaseConnectionException la connesione al databese ï¿½ fallita
 	 */
 
 	public Data(final String table)

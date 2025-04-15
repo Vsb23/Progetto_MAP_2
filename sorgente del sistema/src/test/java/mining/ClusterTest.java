@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import org.junit.jupiter.api.Test;
 
 import data.Data;
-import database.DatabaseConnectionException;
-import database.EmptySetException;
-import database.NoValueException;
+import exception.DatabaseConnectionException;
+import exception.EmptySetException;
+import exception.NoValueException;
 
 class ClusterTest {
 

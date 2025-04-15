@@ -11,10 +11,10 @@ import java.sql.SQLException;
 import org.junit.jupiter.api.Test;
 
 import data.Data;
-import data.EmptyDatasetException;
-import database.DatabaseConnectionException;
-import database.EmptySetException;
-import database.NoValueException;
+import exception.EmptyDatasetException;
+import exception.DatabaseConnectionException;
+import exception.EmptySetException;
+import exception.NoValueException;
 
 class QTMinerTest {
 	QTMiner q = null;

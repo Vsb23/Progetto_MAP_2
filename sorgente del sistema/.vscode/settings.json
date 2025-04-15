@@ -5,6 +5,7 @@
     "java.project.sourcePaths": [
         "server/src/main/java/server",
         "server/src/main/java",
-        "client/src"
+        "client/src",
+        "src/main/java/server"
     ]
 }

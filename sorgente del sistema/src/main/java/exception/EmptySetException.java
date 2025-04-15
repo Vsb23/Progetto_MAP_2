@@ -1,4 +1,4 @@
-package database;
+package exception;
 
 /**
  * eccezione lanciata in caso di ResultSet vuoto.

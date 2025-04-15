@@ -1,4 +1,4 @@
-package database;
+package exception;
 
 /**
  * eccezione lanciata quando l'operatore aggregato non da risultati.

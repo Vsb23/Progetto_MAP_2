@@ -1,4 +1,4 @@
-package data;
+package exception;
 
 /**
  * eccezione lanciata in caso di Dataset vuoto.

@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import data.Data;
-import data.EmptyDatasetException;
+import exception.EmptyDatasetException;
 
 /**
  * classe che implementa l'algoritmo di Quality Threshold.
@@ -36,7 +36,7 @@ public class QTMiner {
 	 * @param fileName percorso + nome file
 	 * @throws ClassNotFoundException se viene letto un oggetto di cui non conosco la classe.
 	 * @throws IOException problemi in lettura.
-	 * @throws FileNotFoundException se il file non esiste o non è leggibile.
+	 * @throws FileNotFoundException se il file non esiste o non ï¿½ leggibile.
 	 */
 	public QTMiner(final String fileName) throws FileNotFoundException, IOException, ClassNotFoundException {
 		final FileInputStream inFile = new FileInputStream(fileName);
@@ -56,13 +56,13 @@ public class QTMiner {
 	}
 
 	/**
-	 * richiama buildCandidateCluster finchè tutte le tuple non sono state inserite
+	 * richiama buildCandidateCluster finchï¿½ tutte le tuple non sono state inserite
 	 * in un cluster. restituisce il numero di cluster creati.
 	 * 
 	 * @param data dataSet contenente i dati da clusterizzare.
 	 * @return numclusters numero di cluster generati.
-	 * @throws ClusteringRadiusException se il numero di clusters è 1
-	 * @throws EmptyDatasetException se la tabella è vuota
+	 * @throws ClusteringRadiusException se il numero di clusters ï¿½ 1
+	 * @throws EmptyDatasetException se la tabella ï¿½ vuota
 	 */
 	public int compute(final Data data) throws ClusteringRadiusException, EmptyDatasetException {
 
@@ -93,10 +93,10 @@ public class QTMiner {
 
 	/**
 	 * Costruisce un cluster per ciascuna tupla di data non ancora clusterizzata in
-	 * un cluster di C e restituisce il cluster candidato più popoloso.
+	 * un cluster di C e restituisce il cluster candidato piï¿½ popoloso.
 	 * 
 	 * @param data        dataSet contenente i dati da clusterizzare.
-	 * @param isClustered array di booleani che indica quali tuple sono state già
+	 * @param isClustered array di booleani che indica quali tuple sono state giï¿½
 	 *                    clusterizzate
 	 * @return il cluster candidato
 	 */
@@ -123,7 +123,7 @@ public class QTMiner {
 	 * serializza il ClusterSet su file.
 	 * 
 	 * @param fileName nome del file su cui salvare il ClusterSet.
-	 * @throws FileNotFoundException se il file è una directory, se non è possibile crearlo o non si può aprire.
+	 * @throws FileNotFoundException se il file ï¿½ una directory, se non ï¿½ possibile crearlo o non si puï¿½ aprire.
 	 * @throws IOException problemi in scrittura.
 	 */
 

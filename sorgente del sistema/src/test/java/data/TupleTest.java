@@ -12,9 +12,9 @@ import java.util.TreeSet;
 
 import org.junit.jupiter.api.Test;
 
-import database.DatabaseConnectionException;
-import database.EmptySetException;
-import database.NoValueException;
+import exception.DatabaseConnectionException;
+import exception.EmptySetException;
+import exception.NoValueException;
 
 class TupleTest {
 
