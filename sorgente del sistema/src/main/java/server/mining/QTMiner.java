@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import data.Data;
+import exception.ClusteringRadiusException;
 import exception.EmptyDatasetException;
 
 /**

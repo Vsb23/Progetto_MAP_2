@@ -31,9 +31,9 @@ public class Client {
 		int answer;
 
 		do {
-			System.out.println("(1) Load clusters from file");
-			System.out.println("(2) Load data from db");
-			System.out.print("(1/2):");
+			System.out.println("(1) Carica il cluster da file");
+			System.out.println("(2) Carica dati dal database");
+			System.out.print("Opzione:");
 			answer = Keyboard.readInt();
 		} while (answer <= 0 || answer > 2);
 		return answer;
@@ -43,15 +43,15 @@ public class Client {
 	private String learningFromFile() throws SocketException, ServerException, IOException, ClassNotFoundException {
 		out.writeObject(3);
 
-		System.out.print("Table Name:");
+		System.out.print("Tabella:");
 		String tabName = Keyboard.readString();
 		out.writeObject(tabName);
 		double r = 1.0;
-		System.out.print("Radius:");
+		System.out.print("Raggio:");
 		r = Keyboard.readDouble();
 		while (r <= 0) {
-			System.out.println("Insert a radius greater than 0");
-			System.out.print("Radius:");
+			System.out.print("Inserisci un raggio maggiore di 0");
+			System.out.print("Raggio:");
 			r = Keyboard.readDouble();
 		}
 		out.writeObject(r);
@@ -59,7 +59,7 @@ public class Client {
 		if (result.equals(OK)) {
 			return (String) in.readObject();
 		} else if (result.equals("filenotfound")) {
-			throw new ServerException("The selected file does not exists");
+			throw new ServerException("Il file non esiste");
 		} else {
 			throw new ServerException(result);
 		}
@@ -68,14 +68,14 @@ public class Client {
 
 	private void storeTableFromDb() throws SocketException, ServerException, IOException, ClassNotFoundException {
 		out.writeObject(0);
-		System.out.print("Table name:");
+		System.out.print("Tabella:");
 		String tabName = Keyboard.readString();
 		out.writeObject(tabName);
 		String result = (String) in.readObject();
 		if (result.equals("empty")) {
-			throw new ServerException("The selected table is empty");
+			throw new ServerException("La tabella inserita è vuota");
 		} else if (result.equals("notFound")) {
-			throw new ServerException("The selected table does not exists");
+			throw new ServerException("La tabella inserita non esiste");
 		} else if (!result.equals(OK)) {
 			throw new ServerException(result);
 		}
@@ -87,22 +87,22 @@ public class Client {
 		out.writeObject(1);
 		double r = 1.0;
 
-		System.out.print("Radius:");
+		System.out.print("Raggio:");
 		r = Keyboard.readDouble();
 		while (r <= 0) {
-			System.out.println("Insert a radius greater than 0");
-			System.out.print("Radius:");
+			System.out.println("Inserisci un raggio maggiore di 0");
+			System.out.print("Raggio:");
 			r = Keyboard.readDouble();
 		}
 		out.writeObject(r);
 		String result = (String) in.readObject();
 		if (result.equals(OK)) {
-			System.out.println("Number of Clusters:" + in.readObject());
+			System.out.println("Numero di cluster" + in.readObject());
 			return (String) in.readObject();
 		} else if (result.equals("empty")) {
-			throw new ServerException("The selected table is empty");
+			throw new ServerException("La tabella selezionata è vuota");
 		} else if (result.equals("full")) {
-			throw new ServerException("The radious is too big");
+			throw new ServerException("Il raggio inserito è troppo grande");
 		} else {
 			throw new ServerException(result);
 		}
@@ -141,7 +141,7 @@ public class Client {
 			try {
 				main = new Client(ip, port);
 			} catch (IOException e) {
-				System.out.println("connessione fallita");
+				System.out.println("Connessione fallita");
 			}
 	
 			if (main!=null) {
@@ -217,7 +217,7 @@ public class Client {
 								} catch (ServerException e) {
 									System.out.println(e.getMessage());
 								}
-								System.out.print("Would you repeat?(y/n)");
+								System.out.print("Si desidera effettuare un altro clustering?(y/n)");
 								answer = Keyboard.readChar();
 							} while (Character.toLowerCase(answer) == 'y');
 							break;
@@ -225,16 +225,17 @@ public class Client {
 							System.out.println("Invalid option!");
 					}
 		
-					System.out.print("would you choose a new operation from menu?(y/n)");
+					System.out.print("Si desidera ritornare al menù?(y/n)");
 					if (Keyboard.readChar() != 'y') {
 						break;
 					}
 				} while (true);
+				System.out.println("Arrivederci!");
 				main.stop();
 			}
 			
 			if(main==null) {
-				System.out.println("Vuoi riprovare?(y/n)");
+				System.out.println("Si deridera effettuare un altro clustering?(y/n)");
 				on=Keyboard.readString();
 			}
 		}while(main==null && on.equals("y"));

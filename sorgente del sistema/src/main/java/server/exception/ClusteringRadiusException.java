@@ -1,4 +1,4 @@
-package mining;
+package exception;
 
 /**
  * eccezione lanciata in caso di raggio troppo grande.

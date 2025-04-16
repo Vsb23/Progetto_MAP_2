@@ -10,13 +10,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-import data.Data;
+import data.Data; 
 import exception.EmptyDatasetException;
+import exception.ClusteringRadiusException;
 import exception.DatabaseConnectionException;
 import database.DbAccess;
 import exception.EmptySetException;
 import exception.NoValueException;
-import mining.ClusteringRadiusException;
 import mining.QTMiner;
 /**
  * Gestisce la comunicazione con il client.

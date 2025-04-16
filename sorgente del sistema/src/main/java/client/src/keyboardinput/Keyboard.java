@@ -29,7 +29,7 @@ public class Keyboard {
 	// Resets the current error count to zero.
 	// -----------------------------------------------------------------
 
-	public static void resetErrorCount(int count) {
+	public static void resetErrorCount() {
 		errorCount = 0;
 	}
 

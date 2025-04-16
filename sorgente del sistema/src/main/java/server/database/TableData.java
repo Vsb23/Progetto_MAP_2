@@ -9,6 +9,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import database.TableSchema.Column;
+import exception.EmptySetException;
+import exception.NoValueException;
 
 /**
  * Recupera i dati dal database.
@@ -32,8 +34,8 @@ public class TableData {
 	 *
 	 * @param table nome della tabella nel database.
 	 * @return Lista di transazioni distinte memorizzate nella tabella.
-	 * @throws SQLException      se il numero di colonne della tabella è 0.
-	 * @throws EmptySetException se la tabella è vuota.
+	 * @throws SQLException      se il numero di colonne della tabella ï¿½ 0.
+	 * @throws EmptySetException se la tabella ï¿½ vuota.
 	 */
 	public List<Example> getDistinctTransazioni(final String table) throws SQLException, EmptySetException {
 		final LinkedList<Example> transSet = new LinkedList<Example>();
@@ -72,7 +74,7 @@ public class TableData {
 		rs.close();
 		statement.close();
 		if (empty) {
-			throw new EmptySetException("il set è vuoto");
+			throw new EmptySetException("il set ï¿½ vuoto");
 		}
 		return transSet;
 	}
@@ -114,10 +116,10 @@ public class TableData {
 	 *
 	 * @param table     tabella in cui cercare.
 	 * @param column    colonna su cui cercare il valore aggregato.
-	 * @param aggregate può essere MAX o MIN.
+	 * @param aggregate puï¿½ essere MAX o MIN.
 	 * @return il massimo o il minimo in una colonna (se presente).
 	 * @throws SQLException     problemi col database.
-	 * @throws NoValueException se il valore è nullo.
+	 * @throws NoValueException se il valore ï¿½ nullo.
 	 */
 	public Object getAggregateColumnValue(final String table, final Column column, final QUERY_TYPE aggregate)
 			throws SQLException, NoValueException {
