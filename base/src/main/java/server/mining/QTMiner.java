@@ -129,7 +129,7 @@ public class QTMiner {
 	 */
 
 	public void salva(final String fileName) throws FileNotFoundException, IOException {
-		final FileOutputStream outFile = new FileOutputStream(fileName);
+		final FileOutputStream outFile = new FileOutputStream("./results/" + fileName);
 		final ObjectOutputStream outStream = new ObjectOutputStream(outFile);
 		outStream.writeObject(C);
 		outFile.close();
