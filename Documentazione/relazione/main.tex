@@ -1,0 +1,79 @@
+%Documento di proprietà di Vito Stefano Birardi™
+%Qui sono presenti i package più comuni che usi, ricorda di usare solo quelli che ti servono 
+
+%Variabili comuni
+\newcommand{\Titolo}{Progetto Quality Treshold - Documentazione}
+\newcommand{\Data}{\today}
+\newcommand{\Materia}{}
+
+%Comandi troppo lunghi da scrivere possono essere ri-operazionalizzati qui
+
+\newcommand{\image}[3]{%
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{#1}
+    \caption{#2}
+    \label{#3}%
+\end{figure}}
+
+%Package per la formattazione del foglio
+
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Package per la lingua dei capitoli
+
+\usepackage[italian]{babel}
+
+%Package per intestazione e pié di pagina
+
+\usepackage{fancyvrb}
+\usepackage{fancyhdr, lastpage}
+
+%Package aggiuntivi 
+
+\usepackage{cancel}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{subfig}
+\usepackage{tikz, lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{multicol}
+\pagestyle{fancy}
+
+%Formattazione di intestazione e pié di pagina
+
+
+\lhead{\Data}
+\rhead{Vito Stefano Birardi \\ Lorenzo Gelao}
+\lfoot{\Materia}
+\rfoot{Pagina \thepage\ di \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[C]{}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}
+
+%Preambolo per prima pagina
+
+\title{\Titolo}
+\author{
+    A cura di: 
+    Vito Stefano Birardi
+}
+\date{\Data}
+
+%Inizio documento vero e proprio
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\include{intro}
+
+\end{document}
