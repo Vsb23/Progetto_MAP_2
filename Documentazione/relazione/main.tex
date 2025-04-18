@@ -8,12 +8,12 @@
 
 %Comandi troppo lunghi da scrivere possono essere ri-operazionalizzati qui
 
-\newcommand{\image}[3]{%
+\newcommand{\image}[3]{
     \begin{figure}[h!]
     \centering
     \includegraphics[width = 0.5 \textwidth]{#1}
     \caption{#2}
-    \label{#3}%
+    \label{#3}
 \end{figure}}
 
 %Package per la formattazione del foglio
@@ -46,13 +46,22 @@
 \usepackage{multicol}
 \pagestyle{fancy}
 
+%Formattazione hyperlinks
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta, 
+    urlcolor=blue,
+    pdfpagemode=FullScreen
+}
+
 %Formattazione di intestazione e pié di pagina
 
-
 \lhead{\Data}
-\rhead{Vito Stefano Birardi \\ Lorenzo Gelao}
+\rhead{Vito Stefano Birardi}
 \lfoot{\Materia}
-\rfoot{Pagina \thepage\ di \pageref{LastPage}}
+\rfoot{Pagina \thepage\ di \hyperlink{toc}{\pageref*{LastPage}}}
 \renewcommand{\footrulewidth}{0.5pt}
 \fancyfoot[C]{}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}
@@ -72,8 +81,9 @@
 \begin{document}
 \maketitle
 \newpage
-\tableofcontents
+\hypertarget{toc}{\tableofcontents}
 \newpage
 \include{intro}
+\include{Installazione}
 
 \end{document}
