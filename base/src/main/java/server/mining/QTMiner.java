@@ -1,11 +1,14 @@
 package mining;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -20,6 +23,7 @@ public class QTMiner {
 
 	private ClusterSet C;
 	private double radius;
+	private static final String DIRECTORY_PATH = "./results/";
 
 	/**
 	 * Crea un nuovo ClusterSet e assegna il raggio.
@@ -128,11 +132,37 @@ public class QTMiner {
 	 * @throws IOException problemi in scrittura.
 	 */
 
-	public void salva(final String fileName) throws FileNotFoundException, IOException {
-		final FileOutputStream outFile = new FileOutputStream("./results/" + fileName);
-		final ObjectOutputStream outStream = new ObjectOutputStream(outFile);
-		outStream.writeObject(C);
-		outFile.close();
+	 public void salva(final String fileName) throws FileNotFoundException, IOException {
+		// Definisci qui la costante per il percorso della directory
+		final String DIRECTORY_PATH = "./results";
+		
+		Path directoryPath = Paths.get(DIRECTORY_PATH);
+		File directory = directoryPath.toFile();
+		
+		// Stampa di debug per verificare il percorso
+		System.out.println("Tentativo di creazione directory in: " + directory.getAbsolutePath());
+		
+		// Crea la directory se non esiste
+		if (!directory.exists()) {
+			boolean created = directory.mkdirs();
+			System.out.println("Directory creata: " + created);
+			if (!created) {
+				throw new IOException("Impossibile creare la directory: " + DIRECTORY_PATH);
+			}
+		}
+		
+		// Costruisci il percorso completo del file
+		Path filePath = directoryPath.resolve(fileName).normalize();
+		
+		System.out.println("Salvando il file in: " + filePath.toAbsolutePath());
+		
+		// Serializzazione del ClusterSet con try-with-resources
+		try (FileOutputStream outFile = new FileOutputStream(filePath.toFile());
+			 ObjectOutputStream outStream = new ObjectOutputStream(outFile)) {
+			outStream.writeObject(C);
+		}
+		
+		System.out.println("File salvato con successo in: " + filePath.toAbsolutePath());
 	}
 
 	@Override
