@@ -1,0 +1,89 @@
+\section{Eseguire il progetto base}
+
+\subsection{Algoritmo}
+
+La base dell'algrotimo permette all'utente di scegliere un raggio massimo per il cluster. 
+
+Per ciascun punto itneressato,ossia i punti con distanza inferiore al raggio impostato, l'algoritmo calcola i cluster candidati.
+
+Una volta individuati i cluster, quello con il numero maggiore di punti verrà salvato nella cartella \texttt{./results/}, ossia nella root del progetto base. Il nome del file indicherà il database di partenza e il raggio massimo utilizzato per la ricerca, quindi scegliendo per esempio il database \texttt{gopicnic} con un raggio di 3, il file di output sarà \texttt{gopicnic\_003.dmp}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/results.png}
+    \caption{Risultati del salvataggio}
+    
+\end{figure}
+
+Una volta creato il file di output, l'algoritmo provvederà  ad eliminare anceh i cluster non salvati, per evitare che vengano esaminati nuovamente. 
+
+Nel caso in cui più di un cluster abbia il numero massimo di punti, l'algoritmo ripeterà la procedura con il set ridotto di punti. 
+
+\subsection{Struttura del progetto base}
+
+Il progetto base consiste in un'applicazione di tipo client/server. Di fatto, nella cartella \texttt{Jar+Bat} sono presenti i file \texttt{start\_erver.bat} per l'esecuzione del server e \texttt{start\_client} per il client client, che non sono altri che degli scritti batch per l'esecuzione dei file jar.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/file jar base.png}
+    \caption{Jar del progetto base}
+\end{figure}
+
+
+\begin{tcolorbox}[  colback=white!5!white, colframe=gray, title={Avvertenza} ]
+
+    Per avviare il programma correttamente, è necessario eseguire prima il file \texttt{.bat} del server e poi quello del client.
+\end{tcolorbox}
+
+\subsection{Esecuzione di QTB\_Server}
+
+
+Il normale avviamento del file \texttt{start\_server.bat} mostrerà la seguente schermata, che indica che il server è in ascolto sulla porta 8080, in attesa di una richiesta da parte del client.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/normale funzionamento del server.png}
+    \caption{Server in ascolto}
+    
+\end{figure}
+
+\subsection{Esecuzione di QTB\_Client}
+
+Per quanto riguarda il client, una volta avviato, mostrerà la seguente schermata.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/normale funzionamento lcient.png}
+    \caption{Schermata iniziale del client}
+    
+\end{figure}
+
+\begin{tcolorbox}[  colback=white!5!white, colframe=gray, title={Avvertenza} ]
+
+    Nel caso in cui il server non si sia avvaito correttamente, o sia stato avviato il client prima del server, il client mostrerà la seguente schermata, che indicherà appunto che la connessione al server non è avvenuta correttamente.
+    
+    \begin{center} 
+        \includegraphics[width = 0.5 \textwidth]{images/connessione fallita.png}
+    \end{center}
+        
+\end{tcolorbox}
+
+Una volta assicurati che il client comunichi correttamente con il server, si potrà decidere se caricare i dati da un file di un clustering precedente o da un database.
+
+
+Se si sceglie di caricare i dati da una tabella del database, si procederà  con l'inserimento del nome della tabella da cui si vogliono estrarre i dati. Nel caso in cui tale tabella non sia presente nel database, il client avvisrà l'utente con un messaggio di errore e chiedendo di inserire un nome valido. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/teabella inesistente.png}
+    \caption{Errore tabella non presente}
+\end{figure}
+
+Una volta scelto correttamente una tabella, si procederà nel determinare il raggio del clustering e, automaticamente, il programma restituirà il risultato. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/risultato atteso.png}
+    \caption{Risultato del clustering}
+\end{figure}
+
