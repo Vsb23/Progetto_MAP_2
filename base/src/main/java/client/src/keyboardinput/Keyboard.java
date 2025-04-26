@@ -141,7 +141,7 @@ public class Keyboard {
 				str = str + getNextToken(false);
 			}
 		} catch (Exception exception) {
-			error("Error reading String data, null value returned.");
+			error("Errore durante la lettura della stringa, valore null restituito.");
 			str = null;
 		}
 		return str;
@@ -156,7 +156,7 @@ public class Keyboard {
 		try {
 			token = getNextToken();
 		} catch (Exception exception) {
-			error("Error reading String data, null value returned.");
+			error("Errore durante la lettura della stringa, valore null restituito.");
 			token = null;
 		}
 		return token;
@@ -174,11 +174,11 @@ public class Keyboard {
 			else if (token.toLowerCase().equals("false"))
 				bool = false;
 			else {
-				error("Error reading boolean data, false value returned.");
+				error("Errore durante la lettura del boolean, valore false restituito.");
 				bool = false;
 			}
 		} catch (Exception exception) {
-			error("Error reading boolean data, false value returned.");
+			error("Errore durante la lettura del boolean, valore false restituito.");
 			bool = false;
 		}
 		return bool;
@@ -197,7 +197,7 @@ public class Keyboard {
 				current_token = null;
 			value = token.charAt(0);
 		} catch (Exception exception) {
-			error("Error reading char data, MIN_VALUE value returned.");
+			error("Errore durante la lettura del carattere, valore MIN_VALUE restituito.");
 			value = Character.MIN_VALUE;
 		}
 
@@ -213,7 +213,7 @@ public class Keyboard {
 		try {
 			value = Integer.parseInt(token);
 		} catch (Exception exception) {
-			error("Error reading int data, MIN_VALUE value returned.");
+			error("Errore durante la lettura del valore intero, valore MIN_VALUE restituito.");
 			value = Integer.MIN_VALUE;
 		}
 		return value;
@@ -228,7 +228,7 @@ public class Keyboard {
 		try {
 			value = Long.parseLong(token);
 		} catch (Exception exception) {
-			error("Error reading long data, MIN_VALUE value returned.");
+			error("Errore durante la lettura del long, valore MIN_VALUE restituito.");
 			value = Long.MIN_VALUE;
 		}
 		return value;
@@ -243,7 +243,7 @@ public class Keyboard {
 		try {
 			value = (new Float(token)).floatValue();
 		} catch (Exception exception) {
-			error("Error reading float data, NaN value returned.");
+			error("Il valore inserito non è un numero valido");
 			value = Float.NaN;
 		}
 		return value;
@@ -258,7 +258,7 @@ public class Keyboard {
 		try {
 			value = (new Double(token)).doubleValue();
 		} catch (Exception exception) {
-			error("Error reading double data, NaN value returned.");
+			error("Il valore inserito non è un numero valido");
 			value = Double.NaN;
 		}
 		return value;

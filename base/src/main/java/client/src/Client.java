@@ -83,17 +83,24 @@ public class Client {
 	}
 
 	private String learningFromDbTable()
-			throws SocketException, ServerException, IOException, ClassNotFoundException {
-		out.writeObject(1);
-		double r = 1.0;
-
-		System.out.print("Raggio:");
-		r = Keyboard.readDouble();
-		while (r <= 0) {
-			System.out.println("Inserisci un raggio maggiore di 0");
-			System.out.print("Raggio:");
-			r = Keyboard.readDouble();
-		}
+        throws SocketException, ServerException, IOException, ClassNotFoundException {
+	Keyboard.setPrintErrors(false);
+    out.writeObject(1);
+    double r;
+    
+    System.out.print("Raggio:");
+    r = Keyboard.readDouble();
+    
+    // Continua a chiedere finché non ottieni un numero valido (non NaN) e maggiore di zero
+    while (Double.isNaN(r) || r <= 0) {
+        if (Double.isNaN(r)) {
+            System.out.println("Errore: inserisci un valore numerico!");
+        } else {
+            System.out.println("Inserisci un raggio maggiore di 0");
+        }
+        System.out.print("Raggio:");
+        r = Keyboard.readDouble();
+    }	
 		out.writeObject(r);
 		String result = (String) in.readObject();
 		if (result.equals(OK)) {
