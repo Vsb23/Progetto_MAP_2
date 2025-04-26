@@ -87,3 +87,25 @@ Una volta scelto correttamente una tabella, si procederà nel determinare il rag
     \caption{Risultato del clustering}
 \end{figure}
 
+\subsection{Test QT\_BASE}
+
+Durante l'esecuzione del programma, può capitare che l'utente inserisca dei valori che quest'ultimo non è in grado di gestire. Chiaramente nonostante la presenza di queste situazioni, deve essere garantita la continuità di esecuzione del programma e la corretta amminstrazione di queste situazioni estreme.
+
+Nel caso in cui l'utente inserisca un valore del raggio maggiroe di 
+
+Una volta calcolato il raggio, il programma chiederà all'utente se ha intenzione di effettuare nuovamente un clustering: in caso positivo chiederà nuovamente la misura del raggio, in caso opposto chiederà all'utente se vuole tornare al menù principale o chiudere il programma. 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = .5\textwidth]{images/richeista continuazione.png}
+    \caption{Gestione finale clustering}
+\end{figure}
+
+Domandando all'utente se si vuole ritornare al menù principale, si  gestisce la chiusura del programma e, allo stesso tempo, il ritorno al menù principale, ossia alla situazione iniziale. 
+
+Inoltre, tale stratagemma previene lo spiacevole inconveniente per cui si è obbligati a forzare l'interruzione dell'esecuzione. 
+
+
+
+
