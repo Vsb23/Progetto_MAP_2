@@ -21,7 +21,7 @@ class ContinuousAttribute extends Attribute {
 	 * @param max   valore massimo che puo assumere.
 	 */
 	ContinuousAttribute(final String name, final int index, final double min, final double max) {
-		super(name, index); // chiama il costruttore della classe madre
+		super(name, index);
 		this.max = max;
 		this.min = min;
 	}

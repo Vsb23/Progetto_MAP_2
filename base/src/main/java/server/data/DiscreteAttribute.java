@@ -41,4 +41,5 @@ class DiscreteAttribute extends Attribute implements Iterable<String> {
 	int getNumberOfDistinctValues() {
 		return values.size();
 	}
+
 }
