@@ -107,6 +107,18 @@ public class TelegramBot implements LongPollingUpdateConsumer {
             // Se l'utente non ha uno stato o invia /start, inizializziamo lo stato
             if (!userStates.containsKey(chatId) || text.equals("/start")) {
                 userStates.put(chatId, UserState.START);
+                // Invia il messaggio iniziale
+                sendTextMessage(chatId, "Benvenuto al bot QTMiner! 🤖\n\n" +
+                    "Questo bot ti permette di interagire con il sistema QTMiner per l'analisi dei dati.\n" +
+                    "Puoi visualizzare tabelle, caricare dati, eseguire l'algoritmo QT e gestire i risultati.\n\n" +
+                    "Seleziona un'operazione dal menu qui sotto per iniziare:");
+                sendMainMenu(chatId);
+                return;
+            }
+            
+            // Gestisci il comando "Torna al menu principale"
+            if (text.equals("Torna al menu principale")) {
+                userStates.put(chatId, UserState.START);
                 sendMainMenu(chatId);
                 return;
             }
@@ -355,7 +367,7 @@ public class TelegramBot implements LongPollingUpdateConsumer {
     private void loadResults(long chatId) throws TelegramApiException {
         String tableName = tableNames.get(chatId);
         double radius = radiusValues.get(chatId);
-        String fileName = tableName + "_" + radius + ".dmp";
+        String fileName = "./results/" + tableName + "_" + radius + ".dmp";
         
         try {
             QTMiner qtMiner = new QTMiner(fileName);
@@ -423,6 +435,7 @@ public class TelegramBot implements LongPollingUpdateConsumer {
         
         KeyboardRow row3 = new KeyboardRow();
         row3.add("Carica risultati");
+        row3.add("Torna al menu principale");
         
         keyboard.add(row1);
         keyboard.add(row2);
