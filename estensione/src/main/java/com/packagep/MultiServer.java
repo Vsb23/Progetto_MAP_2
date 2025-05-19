@@ -42,6 +42,10 @@ public class MultiServer {
 		}
 	}
 
+	
+	/** 
+	 * @param args
+	 */
 	public static void main(final String[] args) {
 		int port = 8080;
 		if (port < 1024 || port > 65535) {
