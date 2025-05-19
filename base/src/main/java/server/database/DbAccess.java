@@ -6,89 +6,112 @@ import java.sql.SQLException;
 import exception.DatabaseConnectionException;
 
 /**
- * gestisce la connessione al database.
+ * Gestisce la connessione a un database MySQL.
+ * <p>
+ * La classe si occupa di:
+ * <ul>
+ *   <li>Caricare il driver JDBC per MySQL</li>
+ *   <li>Stabilire una connessione al database</li>
+ *   <li>Fornire accesso alla connessione</li>
+ *   <li>Chiudere la connessione</li>
+ * </ul>
+ * Tutti i parametri di connessione sono definiti come costanti della classe.
  */
-
 public class DbAccess {
 
-	/**
-	 * (Per utilizzare questo Driver scaricare e aggiungere al classpath il
-	 * connettore mysql connector).
-	 */
-	private static final String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver"; // org.gjt.mm.mysql.Driver";
-	/**
-	 *
-	 */
-	private static final String DBMS = "jdbc:mysql";
-	/**
-	 * contiene l'identificativo del server su cui risiede la base di dati (per
-	 * esempio localhost).
-	 */
-	private static final String SERVER = "localhost";
-	/**
-	 * contiene il nome della base di dati.
-	 */
-	private static final String DATABASE = "MapDB";
-	/**
-	 * La porta su cui il DBMS MySQL accetta le connessioni.
-	 */
-	private static final String PORT = "3306";
-	/**
-	 * contiene il nome dell' utente per l'accesso alla base di dati.
-	 */
-	private static final String USER_ID = "MapUser";
-	/**
-	 * contiene la password di autenticazione per l' utente identificato da USER_ID.
-	 */
-	private static final String PASSWORD = "map";
-	/**
-	 * gestisce una connessione.
-	 */
-	private Connection conn;
+    /**
+     * Nome della classe del driver JDBC per MySQL (versione Connector/J).
+     * Necessario aggiungere il JAR del driver al classpath.
+     */
+    private static final String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver"; // org.gjt.mm.mysql.Driver";
+    
+    /**
+     * Protocollo JDBC per il DBMS MySQL.
+     */
+    private static final String DBMS = "jdbc:mysql";
+    
+    /**
+     * Indirizzo del server database (localhost per installazioni locali).
+     */
+    private static final String SERVER = "localhost";
+    
+    /**
+     * Nome del database a cui connettersi.
+     */
+    private static final String DATABASE = "MapDB";
+    
+    /**
+     * Porta TCP su cui MySQL è in ascolto (default: 3306).
+     */
+    private static final String PORT = "3306";
+    
+    /**
+     * Username per l'autenticazione al database.
+     */
+    private static final String USER_ID = "MapUser";
+    
+    /**
+     * Password per l'autenticazione al database.
+     */
+    private static final String PASSWORD = "map";
+    
+    /**
+     * Oggetto Connection che gestisce la sessione con il database.
+     */
+    private Connection conn;
 
-	/**
-	 * Impartisce al class loader l' ordine di caricare il driver mysql, inizializza
-	 * la connessione riferita da conn. Il metodo solleva e propaga una eccezione di
-	 * tipo DatabaseConnectionException in caso di fallimento nella connessione al
-	 * database.
-	 *
-	 * @throws DatabaseConnectionException problemi di connessione al database
-	 */
-	public void initConnection() throws DatabaseConnectionException {
-		try {
-			Class.forName(DRIVER_CLASS_NAME).newInstance();
-		} catch (final ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (final IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (final InstantiationException e) {
-			e.printStackTrace();
-		}
-		try {
-			conn = DriverManager.getConnection(DBMS + "://" + SERVER + ":" + PORT + "/" + DATABASE
-					+ "?user=" + USER_ID + "&password=" + PASSWORD + "&serverTimezone=UTC");
-		} catch (final SQLException e) {
-			throw new DatabaseConnectionException("connessione fallita");
-		}
-	}
+    /**
+     * Inizializza la connessione al database.
+     * <p>
+     * Esegue due operazioni principali:
+     * <ol>
+     *   <li>Carica il driver JDBC specificato in DRIVER_CLASS_NAME</li>
+     *   <li>Stabilisce una connessione usando i parametri configurati</li>
+     * </ol>
+     *
+     * @throws DatabaseConnectionException se si verificano errori durante:
+     *         - Il caricamento del driver
+     *         - La connessione al database
+     *         - L'autenticazione
+     */
+    public void initConnection() throws DatabaseConnectionException {
+        try {
+            Class.forName(DRIVER_CLASS_NAME).newInstance();
+        } catch (final ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (final IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (final InstantiationException e) {
+            e.printStackTrace();
+        }
+        try {
+            conn = DriverManager.getConnection(DBMS + "://" + SERVER + ":" + PORT + "/" + DATABASE
+                    + "?user=" + USER_ID + "&password=" + PASSWORD + "&serverTimezone=UTC");
+        } catch (final SQLException e) {
+            throw new DatabaseConnectionException("connessione fallita");
+        }
+    }
 
-	/**
-	 * Restituisce la connessione.
-	 *
-	 * @return conn
-	 */
-	public Connection getConnection() {
-		return conn;
-	}
+    /**
+     * Restituisce l'oggetto Connection attivo.
+     *
+     * @return L'oggetto Connection corrente
+     */
+    public Connection getConnection() {
+        return conn;
+    }
 
-	/**
-	 * chiude la connessione conn.
-	 */
-	public void closeConnection() {
-		try {
-			conn.close();
-		} catch (final SQLException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * Chiude la connessione al database.
+     * <p>
+     * Se la connessione è già chiusa o non esiste,
+     * il metodo termina silenziosamente.
+     */
+    public void closeConnection() {
+        try {
+            conn.close();
+        } catch (final SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
