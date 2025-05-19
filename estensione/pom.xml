@@ -20,10 +20,31 @@
             <artifactId>telegrambots-client</artifactId>
             <version>8.3.0</version>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
-        </dependency>
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.0.33</version>
+</dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.10.0</version>
+        <scope>test</scope>
+    </dependency>
     </dependencies>
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.6.0</version>
+            <configuration>
+                <sourcepath>${project.basedir}/src/main/java</sourcepath>
+                <subpackages>com.packagep.data:com.packagep.database:com.packagep.exception:com.packagep.mining</subpackages>
+                <show>public</show>
+                <detectJavaApiLink>false</detectJavaApiLink>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>
