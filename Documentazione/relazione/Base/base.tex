@@ -2,8 +2,26 @@
 
 
 \section{Eseguire il progetto base}
+\subsection{Imporrtazione del database}
+Per il corretto funzionamento del progetto base, è necessario, prima di eseguire il programma, importare il database \texttt{QT.sql} presente nella cartella \texttt{Progetto_MAP_2/risorse/} all'interno del proprio DBMS.
 
-\subsection{Algoritmo}
+Siccome nella sezione precedente abbiamo fornito l'installer per Mysql, si consiglia di utilizzare quest'ultimo per importare il database. Per importare il database all'interno di Mysql, è necessario aprire il terminale, accedere con le credenziali di root a Mysql, e lanciare il seguente comando:
+
+\begin{verbatim}
+source *PERCORSO DEL FILE QT.sql*
+\end{verbatim}
+
+\begin{tcolorbox}[  colback=white!5!white, colframe=gray, title={Avvertenza} ]
+
+    Si ricorda di cambiare il percorso del file \texttt{QT.sql} con quello corretto, effettuando un \textit{drag and droop} del file all'interno del terminale, in modo da evitare errori di battitura. 
+    
+\end{tcolorbox}
+
+Se il comando è stato eseguito correttamente, il terminale restitruirà la seguente schermata:
+
+% \image{relazione/images/import mapdb.png}{Import del database QT}{import QT} RICORDATI DI CAMBIARE IMMAGINE IMPORT MAPDB
+
+\subsection{Funzionamento dell'algoritmo}
 
 La base dell'algoritmo permette all'utente di scegliere un raggio massimo per il cluster. 
 
