@@ -1,11 +1,67 @@
 \section{Introduzione}
 
-Il progetto in questione utilizza l'algoritmo \textbf{Quality Treshold} per l'analisi dei dati.
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
 
-Tali dati possono essere estratti da un file, oppure possono essere estrati dalle tabelle di un database MySQL. 
+\title{Algoritmo Quality Threshold per l'Analisi dei Dati}
+\author{}
+\date{}
 
-L'algoritmo quality treshold è un algoritmo di \underline{clustering} che si basa sulla \underline{minimizzazione} della \underline{distanza tra i punti} e il centroide del cluster. 
+\begin{document}
 
-L'algoritmo è stato sviluppato per essere utilizzato in contesti in cui i dati sono rumorosi e non lineari, e si basa su un approccio gerarchico per la creazione dei cluster.
+\maketitle
 
-Rispetto ad altri algoritmi di partizionamento dei dati, come il k-means, richeide una potenza di calcolo maggiore, ma a differenza di altri, non richiede di specificare il numero di cluster da creare, ma solo il raggio massimo. Inoltre, l'algoritmo è in grado di restituire sempre lo stesso risultato, nonostante esso venga eseguito ripetutamente, a differenza di altri algoritmi che possono restituire risultati diversi a seconda della loro inizializzazione.
+Il progetto in questione utilizza l'algoritmo \textbf{Quality Threshold (QT)} per l'analisi dei dati. Tali dati possono essere estratti da un file o dalle tabelle di un database MySQL.
+
+\section{Cos'è l'Algoritmo Quality Threshold}
+
+L'algoritmo Quality Threshold è un algoritmo di \textbf{clustering} deterministico che appartiene alla famiglia degli algoritmi di raggruppamento gerarchico. A differenza degli algoritmi di partizionamento tradizionali, il QT non richiede di specificare a priori il numero di cluster da creare, ma si basa su un parametro di soglia di qualità (\textit{threshold}) che definisce il raggio massimo consentito per ogni cluster.
+
+\section{Principio di Funzionamento}
+
+L'algoritmo si basa sulla \textbf{minimizzazione della distanza} tra i punti dati e il centroide del cluster di appartenenza. Il processo di clustering avviene attraverso i seguenti passaggi:
+
+\begin{enumerate}
+\item \textbf{Selezione del punto candidato}: Per ogni punto del dataset, viene valutata la possibilità di creare un nuovo cluster
+\item \textbf{Formazione del cluster}: Vengono raggruppati tutti i punti che si trovano entro il raggio di soglia specificato
+\item \textbf{Selezione del cluster ottimale}: Viene scelto il cluster che contiene il maggior numero di punti
+\item \textbf{Iterazione}: Il processo si ripete sui punti rimanenti fino a quando tutti i punti sono stati assegnati a un cluster
+\end{enumerate}
+
+\section{Caratteristiche Distintive}
+
+L'algoritmo Quality Threshold presenta diverse caratteristiche che lo distinguono da altri approcci di clustering:
+
+\subsection{Vantaggi}
+
+\begin{itemize}
+\item \textbf{Determinismo}: L'algoritmo restituisce sempre lo stesso risultato quando viene eseguito ripetutamente sullo stesso dataset, a differenza di algoritmi come il \textit{k-means} che possono produrre risultati diversi a seconda dell'inizializzazione casuale
+\item \textbf{Numero di cluster automatico}: Non richiede di specificare il numero di cluster da creare, ma solo il raggio massimo (\textit{threshold}), rendendo l'algoritmo più flessibile per dataset con strutture sconosciute
+\item \textbf{Robustezza al rumore}: È stato progettato per gestire efficacemente dati rumorosi e con distribuzioni non lineari
+\item \textbf{Approccio gerarchico}: Utilizza una strategia gerarchica per la creazione dei cluster, garantendo una maggiore stabilità dei risultati
+\end{itemize}
+
+\subsection{Svantaggi}
+
+\begin{itemize}
+\item \textbf{Complessità computazionale}: Richiede una potenza di calcolo maggiore rispetto ad algoritmi di partizionamento come il \textit{k-means}, con una complessità temporale che può essere significativamente elevata per dataset di grandi dimensioni
+\item \textbf{Sensibilità al parametro threshold}: La scelta del raggio di soglia influenza notevolmente la qualità del clustering ottenuto
+\end{itemize}
+
+\section{Ambiti di Applicazione}
+
+L'algoritmo Quality Threshold è particolarmente adatto per contesti in cui:
+
+\begin{itemize}
+\item I dati presentano rumore significativo
+\item La distribuzione dei dati è non lineare o presenta forme complesse
+\item Non si conosce a priori il numero ottimale di cluster
+\item È richiesta riproducibilità dei risultati
+\item La qualità del clustering è più importante dell'efficienza computazionale
+\end{itemize}
