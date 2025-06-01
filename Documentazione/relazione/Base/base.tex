@@ -2,8 +2,8 @@
 
 
 \section{Eseguire il progetto base}
-\subsection{Imporrtazione del database}
-Per il corretto funzionamento del progetto base, è necessario, prima di eseguire il programma, importare il database \texttt{QT.sql} presente nella cartella \texttt{Progetto_MAP_2/risorse/} all'interno del proprio DBMS.
+\subsection{Importazione del database}
+Per il corretto funzionamento del progetto base, è necessario, prima di eseguire il programma, importare il database \texttt{QT.sql} presente nella cartella \texttt{Progetto\_MAP\_2/risorse/} all'interno del proprio DBMS.
 
 Siccome nella sezione precedente abbiamo fornito l'installer per Mysql, si consiglia di utilizzare quest'ultimo per importare il database. Per importare il database all'interno di Mysql, è necessario aprire il terminale, accedere con le credenziali di root a Mysql, e lanciare il seguente comando:
 
@@ -21,7 +21,7 @@ Se il comando è stato eseguito correttamente, il terminale restitruirà la segu
 
 % \image{relazione/images/import mapdb.png}{Import del database QT}{import QT} RICORDATI DI CAMBIARE IMMAGINE IMPORT MAPDB
 
-\subsection{Funzionamento dell'algoritmo}
+\subsection{Normale funzionamento}
 
 La base dell'algoritmo permette all'utente di scegliere un raggio massimo per il cluster. 
 
@@ -56,10 +56,11 @@ Il progetto base consiste in un'applicazione di tipo client/server. Di fatto, ne
     Per avviare il programma correttamente, è necessario eseguire prima il file \texttt{.bat} del server e poi quello del client.
 \end{tcolorbox}
 
+\section{Avvio dell'applicazione}
+
 \subsection{Esecuzione di QTB\_Server}
 
-
-Il normale avviamento del file \texttt{start\_server.bat} mostrerà la seguente schermata, che indica che il server è in ascolto sulla porta 8080, in attesa di una richiesta da parte del client.
+Avviando il file \texttt{start\_server.bat} verrà mostrata la seguente schermata, che indica che il server è in ascolto sulla porta 8080, in attesa di una richiesta da parte del client.
 
 \begin{figure}[h!]
     \centering
@@ -107,6 +108,8 @@ Una volta scelto correttamente una tabella, si procederà nel determinare il rag
     \includegraphics[width = 0.5 \textwidth]{images/risultato atteso.png}
     \caption{Risultato del clustering}
 \end{figure}
+
+A fine esecuzione, il risultato del clustering verrà salvato nella cartella \texttt{./results/} con il nome della tabella e il raggio utilizzato per il clustering, come già spiegato in precedenza.
 
 \subsection{Test QT\_BASE}
 
