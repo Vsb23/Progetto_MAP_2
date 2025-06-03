@@ -23,6 +23,10 @@ abstract class Item implements Serializable {
 		this.value = value;
 	}
 
+	
+	/** 
+	 * @return Attribute
+	 */
 	Attribute getAttribute() {
 
 		return attribute;

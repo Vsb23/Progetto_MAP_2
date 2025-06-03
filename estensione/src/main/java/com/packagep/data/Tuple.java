@@ -21,6 +21,10 @@ public class Tuple implements Serializable {
 		tuple = new Item[size];
 	}
 
+	
+	/** 
+	 * @return int
+	 */
 	public int getLength() {
 		return tuple.length;
 	}
