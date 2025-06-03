@@ -110,9 +110,8 @@ public class TelegramBot implements LongPollingUpdateConsumer {
                 // Invia il messaggio iniziale
                 sendTextMessage(chatId, "Benvenuto al bot QTMiner! 🤖\n\n" +
                     "Questo bot ti permette di interagire con il sistema QTMiner per l'analisi dei dati.\n" +
-                    "Puoi visualizzare tabelle, caricare dati, eseguire l'algoritmo QT e gestire i risultati.\n\n" +
-                    "Seleziona un'operazione dal menu qui sotto per iniziare:");
-                sendMainMenu(chatId);
+                    "Puoi visualizzare tabelle, caricare dati, eseguire l'algoritmo QT e gestire i risultati.\n\n\n");
+                    sendMainMenu(chatId);
                 return;
             }
             
