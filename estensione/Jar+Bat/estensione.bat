@@ -1,3 +1,4 @@
 @echo off
-java -jar "./estensione.jar"
+cd ..
+java -jar "./Jar+Bat/estensione.jar"
 pause
