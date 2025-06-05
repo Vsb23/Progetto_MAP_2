@@ -21,7 +21,7 @@ import java.util.concurrent.Executors;
  */
 public class UnifiedMain {
     
-    private static final String BOT_TOKEN = "8043499891:AAE13VTfE6fiK2voZPjVbahprppW0iR67Us";
+    private static final String BOT_TOKEN = "8037173633:AAEQWCEQ0jGHYxm2MER2ci4W58ZdvsTE3-M";
     private static final int SERVER_PORT = 8080;
     
     /**

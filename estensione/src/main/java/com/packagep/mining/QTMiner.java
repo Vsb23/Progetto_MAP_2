@@ -23,7 +23,7 @@ public class QTMiner {
 
 	private ClusterSet C;
 	private double radius;
-	private static final String DIRECTORY_PATH = "./results/";
+	private static final String DIRECTORY_PATH = "../../results";
 
 	/**
 	 * Crea un nuovo ClusterSet e assegna il raggio.
