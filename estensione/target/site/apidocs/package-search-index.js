@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.packagep.data"},{"l":"com.packagep.database"},{"l":"com.packagep.exception"},{"l":"com.packagep.mining"}];updateSearchResults();

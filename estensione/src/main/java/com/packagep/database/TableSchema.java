@@ -13,6 +13,26 @@ import java.util.List;
  * schema della tabella del Database, contiene una lista con nomi delle colonne
  * e tipi.
  */
+/**
+ * Rappresenta lo schema di una tabella del database. Contiene informazioni sulle colonne della tabella,
+ * inclusi i loro nomi e tipi.
+ */
+
+/**
+ * Crea una nuova istanza di TableSchema estraendo i metadati dalla tabella del database specificata.
+ * Mappa i tipi di dati SQL in tipi Java utilizzando una mappatura predefinita.
+ *
+ * @param db        L'oggetto di accesso al database che fornisce la connessione
+ * @param tableName Il nome della tabella di cui estrarre lo schema
+ * @throws SQLException Se si verifica un errore nell'accesso ai metadati del database
+ */
+
+/**
+ * Restituisce il numero totale di attributi (colonne) nello schema della tabella.
+ *
+ * @return Il numero di colonne nella tabella
+ */
+
 public class TableSchema {
 
 	private List<Column> tableSchema = new ArrayList<Column>();

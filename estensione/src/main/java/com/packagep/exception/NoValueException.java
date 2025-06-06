@@ -1,10 +1,16 @@
 package com.packagep.exception;
 
 /**
- * eccezione lanciata quando l'operatore aggregato non da risultati.
+ * Eccezione lanciata quando l'operatore aggregato non da risultati.
  */
 public class NoValueException extends Exception {
-	public NoValueException(final String s) {
-		super(s);
-	}
+    
+    /**
+     * Costruisce una nuova istanza di NoValueException con il messaggio specificato.
+     *
+     * @param s il messaggio di dettaglio dell'eccezione
+     */
+    public NoValueException(final String s) {
+        super(s);
+    }
 }
