@@ -5,4 +5,28 @@ Tali test hanno coinvolto principalmente la correttezza della gestione delle var
 
 Chiaramente queste situazioni anomale devono essere notificate al livello di client, per permettere all'utente di comprendere l'entità del problema e prendere le opportune misure.
 
-\subsection{}
+Si fa notare che i test elencati sono stati eseguiti tenendo conto il normale flusso di lavoro del bot, nel senso che è stato seguito il flusso di interazione del bot per via sequenziale, senza saltare passaggi o inviare comandi in modo casuale.
+
+\subsection{Tabelle non trovate}
+
+Nel caso in cui venga inserito il nome di una tabella inesistente, il bot risponderà specificando che  la tabella isnerita non esiste e invita a inserire un nome di tabella valido.
+
+\image{images/tabella inesistente.png}{comportamento tabella inesistente}{tabne}
+
+Chiaramente l'algoritmo QT non potrà essere eseguito su una tabella inesistente, quindi il bot risponderà con un messaggio di errore specificando che non è possibile eseguire l'algoritmo QT se prima 
+
+\image{images/esegui prima qt.png}{inconsistenza algoritmo QT}{inconsistenza}
+
+\subsection{raggio non valido}
+
+Nel caso si inserisca un raggio non valido, che include quindi le casistiche in cui il raggio è negativo o non numerico, il bot risponderà specificando che il raggio inserito non è valido, in quanto ge nererebbe un solo cluster, e pertanto  invita a inserire un raggio valido.
+
+\image{images/raggio invalido.png}{Raggio invalido}{raggoinv}
+
+\subsection{File non trovato}
+
+Nel caso in cui, durante l'esecuzione del comando \texttt{Carica risultati}, il file specificato non dovesse essere presente enlla cartella \texttt{results}, il bot risponderà specificando che il file non è stato trovato. 
+
+\image{images/file not found.png}{Esempio di file non trovato}{fnf}
+
+Sarà quindi necessario eseguire nuovamente il comando ed inserire il nome di un file valido. 
