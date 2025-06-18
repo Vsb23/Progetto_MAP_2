@@ -1,14 +1,16 @@
 \section{Eseguire l'applicazione}
 
-Rispetto alla versione base, l'usaiblità del programma è migliorata. Se prima occorreva eseguire sia il server che il client, ora è possibile eseguire un solo file JAR, che corrisponde sia al server che al modulo di comunicazione con il bot Telegram. 
+Rispetto alla versione base, ora è possibile eseguire un solo file JAR, che corrisponde sia al server che al modulo di comunicazione con il bot Telegram. 
 
 \subsection{Avvio dell'applicazione}
 
 Per avviare l'applicazione, come del resto nel progetto base, occorre spostarsi nella cartella \texttt{Jar+Bat} e eseguire il file \texttt{main.bat}. 
 
-A differenza del progetto bas , tuttavia, all'interno della cartella in questione sarà presente solo un file \texttt{.bat}. Pertanto, sarà sufficiente eseguire tale file per avviare l'applicazione, effettuando un doppio click su di esso.
+A differenza del progetto base, tuttavia, all'interno della cartella in questione sarà presente solo un file \texttt{.bat}. Pertanto, sarà sufficiente eseguire tale file per avviare l'applicazione, effettuando un doppio click su di esso.
 
-Se il file \texttt{main.bat} si apre correttamente, verrà aperta una fienstra del terminale, che mostrerà i seguenti logs: 
+Si vuole sottolineare che l'avere un solo file \texttt{.jar} non significa che non vi è più una distinzione tra client e server all'interno del programma, ma solo che adesso possono essere eseguiti da un unico main. 
+
+Se il file \texttt{main.bat} si apre correttamente, verrà aperta una finestra del terminale, che mostrerà i seguenti logs: 
 
 \image{images/avvio estensione bat.png}{Corretto avvio dell'applicazione}{avvio}
 
@@ -20,7 +22,7 @@ Se il file \texttt{main.bat} si apre correttamente, verrà aperta una fienstra d
 
 Una volta avviata la comunicazione tra il server e Telegram, sarà possibile utilizzare il bot Telegram per interagire con il server.
 
-Tale bot è raggingibile digitando il nome \texttt{@QualityTresholdBot} nella barra di ricerca di Telegram, oppure cliccando sul seguente link: \url{https://t.me/QT_Quality_Tresholdbot}
+Tale bot è raggiungibile digitando il nome \texttt{@QualityTresholdBot} nella barra di ricerca di Telegram, oppure cliccando sul seguente link: \url{https://t.me/QT_Quality_Tresholdbot}
 
 \subsection{Schermata iniziale}
 
@@ -44,19 +46,19 @@ Il bot Telegram implementa i seguenti comandi, nella seguente disposizione:
             \item \texttt{Carica Risultati}: permette di caricare i risultati ottenuti dall'algoritmo QT.
             \item \texttt{Carica Risultati}: permette di caricare i risultati ottenuti dall'algoritmo QT.
             \item \texttt{Salva Risultati} : permette di salvare i risultati ottenuti dall'algoritmo QT.
-            \item \texttt{Torna al menù principale} :   permette di tornare al menù principale del bot.
+            \item \texttt{Torna al menù principale} : permette di tornare al menù principale del bot.
         \end{itemize}
 \end{multicols}
 
 \subsection{Esecuzione dell'algoritmo QT}
 
-Chiaramente l'opzione più importante è quella che eprmette l'operazione di calcolo dell'algoritmo QT. Per eseguire l'algoritmo, è sufficiente premere il pulsante \texttt{Esegui Algoritmo QT}. 
+Chiaramente l'opzione più importante è quella che permette l'operazione di calcolo dell'algoritmo QT. Per eseguire l'algoritmo, è sufficiente premere il pulsante \texttt{Esegui Algoritmo QT}. 
 
 \image{images/algoQT.png}{Opzione di esecuzione algoritmo}{eseguialgoqt}
 
-Una volta premuto il pulsante, il bot chiederà di inserire il raggio. Tuttavia, se prima di premerlo non è stato caricata alcuna tabella proveniente dal database, il bot chiederà di caricarne una, in modo da poter eseguire l'algoritmo QT sui dati caricati.
+Una volta premuto il pulsante, il bot chiederà di inserire il raggio. Tuttavia, se prima di premerlo non è stata caricata alcuna tabella proveniente dal database, il bot chiederà di caricarne una, in modo da poter eseguire l'algoritmo QT sui dati caricati.
 
-Quindi, l'utente dovra premere il pulsante \texttt{Carica Tabella} per caricare una tabella, e successivamente premere il pulsante \texttt{Esegui Algoritmo QT} per eseguire l'algoritmo QT, specificando gli opportuni parametri richiesti.
+Quindi, l'utente dovrà premere il pulsante \texttt{Carica Tabella} per caricare una tabella, e successivamente premere il pulsante \texttt{Esegui Algoritmo QT} per eseguire l'algoritmo QT, specificando gli opportuni parametri richiesti.
 
 \begin{figure}[h!]
     \centering
@@ -72,7 +74,7 @@ Quindi, l'utente dovra premere il pulsante \texttt{Carica Tabella} per caricare 
 
 \subsection{Salvare i risultati}
 
-Una volta eseguito l'algoritmo QT, il bot permetterà di salvare il risultato dell'esecuzione in un file \texttt{.dmp}, in maniera molto simile a come avvenivna nel progetto base, all'interno della cartella \texttt{results}, presente nella cartella principale del progetto esteso. 
+Una volta eseguito l'algoritmo QT, il bot permetterà di salvare il risultato dell'esecuzione in un file \texttt{.dmp}, in maniera molto simile a come avveniva nel progetto base, all'interno della cartella \texttt{results}, presente nella cartella principale del progetto esteso. 
 
 \image{images/cartella results.png}{Posizione cartella results}{results}
 
@@ -86,15 +88,14 @@ Qualora si voglia caricare un risultato precedentemente salvato, è possibile fa
 
 \image{images/carica risultati.png}{Opzione di caricamento dei risultati}{caricarisultati}
 
-Il bot non chiederà direttamente di inserire il nome del file da caricare ma, dato che il nome del file \texttt{.dmp} è costruito in modo da contenere le informazioni relative al raggio e alla tabella utilizzata per l'esecuzione dell'algoritmo QT, il bot chiederà di inserire il raggio e  la tabella da ritrovare. 
+Il bot non chiederà direttamente di inserire il nome del file da caricare ma, dato che il nome del file \texttt{.dmp} è costruito in modo da contenere le informazioni relative al raggio e alla tabella utilizzata per l'esecuzione dell'algoritmo QT, il bot chiederà di inserire il raggio e la tabella da ritrovare. 
 
 Se il file \texttt{.dmp} esiste, il bot risponderà restituendo il risultato dell'esecuzione in questione. 
 
 \image{images/risultato caaricamento .png}{Risultato del caricamento di un file .dmp}{riscaricamento}
 
-\subsection{Ritono al menù principale}
+\subsection{Ritorno al menù principale}
 
 Qualora si voglia far ripartire il bot dalla schermata iniziale, è possibile farlo premendo il pulsante \texttt{Torna al menù principale}.
 
 Una volta premuto il pulsante, il bot risponderà con un messaggio di benvenuto, come quello mostrato alla fine della sezione \ref{Schermata iniziale}.
-
