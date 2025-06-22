@@ -1,0 +1,44 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}%
+\contentsline {section}{\numberline {2}Cos'è l'Algoritmo Quality Threshold}{4}{section.2}%
+\contentsline {section}{\numberline {3}Principio di Funzionamento}{4}{section.3}%
+\contentsline {section}{\numberline {4}Caratteristiche Distintive}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Vantaggi}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Svantaggi}{5}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Ambiti di Applicazione}{5}{section.5}%
+\contentsline {section}{\numberline {6}Guida all'installazione}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Installazione JDK}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Variabili di ambiente}{7}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Installazione MySQL}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Schermata iniziale}{7}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Download dei file}{7}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Configurazione del account MySQL}{8}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Schermata finale}{9}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Eseguire il progetto base}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Importazione del database}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Normale funzionamento}{10}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Struttura del progetto base}{11}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Avvio dell'applicazione}{11}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Esecuzione di QTB\_Server}{11}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Esecuzione di QTB\_Client}{12}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Avvio dall'ambiente di sviluppo}{13}{section.9}%
+\contentsline {section}{\numberline {10}Test progetto base}{14}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Gestione del raggio}{15}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Uscita dal programma}{15}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Eseguire il progetto esteso}{16}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Modifiche implementative}{16}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Premessa}{16}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Eseguire l'applicazione}{17}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Avvio dell'applicazione}{17}{subsection.12.1}%
+\contentsline {section}{\numberline {13}Utilizzo del bot Telegram}{18}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Schermata iniziale}{18}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Comandi del bot}{18}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Esecuzione dell'algoritmo QT}{19}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Salvare i risultati}{19}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Caricare un risultato precedente}{21}{subsection.13.5}%
+\contentsline {subsection}{\numberline {13.6}Ritorno al menù principale}{22}{subsection.13.6}%
+\contentsline {section}{\numberline {14}Test progetto esteso}{23}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Tabelle non trovate}{23}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}raggio non valido}{23}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}File non trovato}{24}{subsection.14.3}%
