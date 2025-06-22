@@ -2,7 +2,8 @@
 setlocal enabledelayedexpansion
 
 REM Download delle risorse dalla repository pubblica GitHub
-set "FILE_URL=https://github.com/Vsb23/Risorse-da-scaricare/raw/refs/heads/main/risorse.zip"
+set "JDK_URL=https://download.oracle.com/java/24/latest/jdk-24_windows-x64_bin.msi"
+set "MYSQL_URL=https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.39.0.msi"
 set "ZIP_FILE=.\risorse.zip"
 set "EXTRACT_PATH=.\risorse\"
 set "7Z_PATH=C:\Program Files\7-Zip\7z.exe"
@@ -34,7 +35,12 @@ if errorlevel 1 (
 echo [OK] Connessione a GitHub attiva
 
 echo.
-echo Scaricamento risorse da: %FILE_URL%
+echo Scaricamento risorse...
+mkdir risorse 
+powershell -Command "Invoke-WebRequest -Uri '%JDK_URL%' -OutFile './risorse/jdk-24_windows-x64_bin.msi'"
+
+powershell -Command "Invoke-WebRequest -Uri '%MYSQL_URL%' -OutFile './risorse/mysql-installer-community-8.0.39.0.msi'"
+
 echo.
 
 REM Rimuovi file precedente se esiste
